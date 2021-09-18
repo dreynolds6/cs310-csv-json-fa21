@@ -93,7 +93,7 @@ public class Converter {
                 data.add(currentData);
             }
             
-            jsonObject.put("colHeaders", colHeader);
+            jsonObject.put("colHeaders", colHeader);            
             jsonObject.put("rowHeaders", rowHeader);
             jsonObject.put("data", data);
             
