@@ -75,24 +75,21 @@ public class Converter {
             JSONArray data = new JSONArray();
             String[] currentRow = iterator.next();
             
-            for (int i = 0; i < currentRow.length; ++i) {
+            for (int i = 0; i < currentRow.length; i++) {
                 colHeader.add(currentRow[i]);
             } 
             
             while (iterator.hasNext()) {
                 currentRow = iterator.next();
                 currentData = new JSONArray();
+                rowHeader.add(currentRow[0]);
                 
-                
-                for (int i = 0; i < currentRow.length; ++i) {
-                    if (i == 0) {
-                        rowHeader.add(currentRow[i]);
-                    } else {
+                for (int i = 1; i < currentRow.length; i++) {
+                    
                         int dataStringToInt = Integer.parseInt(currentRow[i]);
                         currentData.add(dataStringToInt);
-                    }
                 }
-                
+                                
                 data.add(currentData);
             }
             
